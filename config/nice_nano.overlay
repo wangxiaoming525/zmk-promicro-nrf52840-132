@@ -4,16 +4,19 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        input@0 { gpios = <&gpio0 3 GPIO_ACTIVE_LOW>; };  // 摇杆上
-        input@1 { gpios = <&gpio0 4 GPIO_ACTIVE_LOW>; };  // 摇杆下
-        input@2 { gpios = <&gpio0 28 GPIO_ACTIVE_LOW>; }; // 摇杆左
-        input@3 { gpios = <&gpio0 29 GPIO_ACTIVE_LOW>; }; // 摇杆右
-        input@4 { gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; }; // 按键1
-        input@5 { gpios = <&gpio0 31 GPIO_ACTIVE_LOW>; }; // 按键2
-        input@6 { gpios = <&gpio0 2 GPIO_ACTIVE_LOW>; };  // 按键3
-        input@7 { gpios = <&gpio1 15 GPIO_ACTIVE_LOW>; }; // 按键4
-        input@8 { gpios = <&gpio1 13 GPIO_ACTIVE_LOW>; }; // 按键5
-        input@9 { gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; }; // 按键6
+        /* 摇杆四方向 对应 Pro Micro  D2/D3/D4/D5 */
+        input@0 { gpios = <&gpio0 3 GPIO_ACTIVE_LOW>; };
+        input@1 { gpios = <&gpio0 4 GPIO_ACTIVE_LOW>; };
+        input@2 { gpios = <&gpio0 28 GPIO_ACTIVE_LOW>; };
+        input@3 { gpios = <&gpio0 29 GPIO_ACTIVE_LOW>; };
+
+        /* 功能按键 对应 Pro Micro D6/D7/D8/D9/D10/D16 */
+        input@4 { gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; };
+        input@5 { gpios = <&gpio0 31 GPIO_ACTIVE_LOW>; };
+        input@6 { gpios = <&gpio0 2 GPIO_ACTIVE_LOW>; };
+        input@7 { gpios = <&gpio1 15 GPIO_ACTIVE_LOW>; };
+        input@8 { gpios = <&gpio1 13 GPIO_ACTIVE_LOW>; };
+        input@9 { gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; };
     };
 
     keymap {
