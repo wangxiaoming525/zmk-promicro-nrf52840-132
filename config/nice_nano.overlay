@@ -1,0 +1,36 @@
+/ {
+    gpio_keys: gpio-keys {
+        compatible = "zmk,gpio-keys";
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        input@0 { gpios = <&gpio0 3 GPIO_ACTIVE_LOW>; };  // 摇杆上
+        input@1 { gpios = <&gpio0 4 GPIO_ACTIVE_LOW>; };  // 摇杆下
+        input@2 { gpios = <&gpio0 28 GPIO_ACTIVE_LOW>; }; // 摇杆左
+        input@3 { gpios = <&gpio0 29 GPIO_ACTIVE_LOW>; }; // 摇杆右
+        input@4 { gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; }; // 按键1
+        input@5 { gpios = <&gpio0 31 GPIO_ACTIVE_LOW>; }; // 按键2
+        input@6 { gpios = <&gpio0 2 GPIO_ACTIVE_LOW>; };  // 按键3
+        input@7 { gpios = <&gpio1 15 GPIO_ACTIVE_LOW>; }; // 按键4
+        input@8 { gpios = <&gpio1 13 GPIO_ACTIVE_LOW>; }; // 按键5
+        input@9 { gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; }; // 按键6
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &joy_hat_up
+                &joy_hat_down
+                &joy_hat_left
+                &joy_hat_right
+                &joy_btn1
+                &joy_btn2
+                &joy_btn3
+                &joy_btn4
+                &joy_btn5
+                &joy_btn6
+            >;
+        };
+    };
+};
